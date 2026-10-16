@@ -1,0 +1,9 @@
+streamlit
+pandas
+numpy
+scikit-learn
+radon
+requests
+python-dotenv
+joblib
+pytest
