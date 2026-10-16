@@ -1,0 +1,391 @@
+{
+  "model_version": "v1.0.0",
+  "selected_algorithm": "LogisticRegression",
+  "is_calibrated": true,
+  "calibration_method": "sigmoid_platt_scaling",
+  "trained_at": "2026-10-16T17:14:48.988590+00:00",
+  "feature_columns": [
+    "files_changed",
+    "lines_added",
+    "lines_deleted",
+    "total_churn",
+    "cyclomatic_complexity",
+    "maintainability_index",
+    "loc",
+    "function_count",
+    "recent_commit_frequency",
+    "previous_defects_count",
+    "test_failure_ratio",
+    "days_since_last_release",
+    "is_main_branch"
+  ],
+  "feature_importances": {
+    "files_changed": 0.1248,
+    "lines_added": 0.05,
+    "lines_deleted": 0.0303,
+    "total_churn": 0.0522,
+    "cyclomatic_complexity": 0.2266,
+    "maintainability_index": -0.1342,
+    "loc": 0.011,
+    "function_count": 0.0983,
+    "recent_commit_frequency": 0.0264,
+    "previous_defects_count": 0.068,
+    "test_failure_ratio": 0.0074,
+    "days_since_last_release": 0.0,
+    "is_main_branch": 0.0
+  },
+  "train_samples": 977,
+  "val_samples": 209,
+  "test_samples": 210,
+  "validation_metrics": {
+    "threshold": 0.5,
+    "sample_count": 209,
+    "positive_cases": 22,
+    "negative_cases": 187,
+    "positive_prevalence": 0.1053,
+    "precision": 0.1857,
+    "recall": 0.5909,
+    "f1": 0.2826,
+    "accuracy": 0.6842,
+    "pr_auc": 0.2958,
+    "roc_auc": 0.6957,
+    "brier_score": 0.2226,
+    "expected_calibration_error": 0.3661,
+    "calibration": {
+      "expected_calibration_error": 0.3661,
+      "prob_true": [
+        0.0392,
+        0.1071,
+        0.2,
+        0.6667
+      ],
+      "prob_pred": [
+        0.3664,
+        0.4812,
+        0.6648,
+        0.829
+      ],
+      "binned_details": [
+        {
+          "bin_index": 1,
+          "bin_range": "0.2-0.4",
+          "sample_count": 51,
+          "observed_frequency": 0.0392,
+          "predicted_probability": 0.3664,
+          "calibration_gap": 0.3272
+        },
+        {
+          "bin_index": 2,
+          "bin_range": "0.4-0.6",
+          "sample_count": 140,
+          "observed_frequency": 0.1071,
+          "predicted_probability": 0.4812,
+          "calibration_gap": 0.374
+        },
+        {
+          "bin_index": 3,
+          "bin_range": "0.6-0.8",
+          "sample_count": 15,
+          "observed_frequency": 0.2,
+          "predicted_probability": 0.6648,
+          "calibration_gap": 0.4648
+        },
+        {
+          "bin_index": 4,
+          "bin_range": "0.8-1.0",
+          "sample_count": 3,
+          "observed_frequency": 0.6667,
+          "predicted_probability": 0.829,
+          "calibration_gap": 0.1623
+        }
+      ]
+    },
+    "confusion_matrix": {
+      "true_negatives": 130,
+      "false_positives": 57,
+      "false_negatives": 9,
+      "true_positives": 13
+    }
+  },
+  "test_metrics": {
+    "threshold": 0.5,
+    "sample_count": 210,
+    "positive_cases": 16,
+    "negative_cases": 194,
+    "positive_prevalence": 0.0762,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "accuracy": 0.9238,
+    "pr_auc": 0.1583,
+    "roc_auc": 0.6382,
+    "brier_score": 0.0702,
+    "expected_calibration_error": 0.0171,
+    "calibration": {
+      "expected_calibration_error": 0.0171,
+      "prob_true": [
+        0.0762
+      ],
+      "prob_pred": [
+        0.0933
+      ],
+      "binned_details": [
+        {
+          "bin_index": 0,
+          "bin_range": "0.0-0.2",
+          "sample_count": 210,
+          "observed_frequency": 0.0762,
+          "predicted_probability": 0.0933,
+          "calibration_gap": 0.0171
+        }
+      ]
+    },
+    "confusion_matrix": {
+      "true_negatives": 194,
+      "false_positives": 0,
+      "false_negatives": 16,
+      "true_positives": 0
+    }
+  },
+  "subgroup_analysis": {
+    "Repository Size: Small (<5K LOC)": {
+      "sample_count": 40,
+      "positive_count": 3,
+      "positive_prevalence": 0.075,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pr_auc": 0.1889,
+      "brier_score": 0.069,
+      "status": "EVALUATED"
+    },
+    "Repository Size: Medium (5K-15K LOC)": {
+      "sample_count": 82,
+      "positive_count": 4,
+      "positive_prevalence": 0.0488,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pr_auc": 0.465,
+      "brier_score": 0.0471,
+      "status": "EVALUATED"
+    },
+    "Repository Size: Large (>15K LOC)": {
+      "sample_count": 88,
+      "positive_count": 9,
+      "positive_prevalence": 0.1023,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pr_auc": 0.1362,
+      "brier_score": 0.0921,
+      "status": "EVALUATED"
+    },
+    "Code Churn: Low (<200 lines)": {
+      "sample_count": 154,
+      "positive_count": 9,
+      "positive_prevalence": 0.0584,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pr_auc": 0.1649,
+      "brier_score": 0.0558,
+      "status": "EVALUATED"
+    },
+    "Code Churn: High (>=200 lines)": {
+      "sample_count": 56,
+      "positive_count": 7,
+      "positive_prevalence": 0.125,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pr_auc": 0.2292,
+      "brier_score": 0.1097,
+      "status": "EVALUATED"
+    },
+    "Defect History: Low (<3 bugs)": {
+      "sample_count": 109,
+      "positive_count": 13,
+      "positive_prevalence": 0.1193,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pr_auc": 0.1459,
+      "brier_score": 0.1057,
+      "status": "EVALUATED"
+    },
+    "Defect History: High (>=3 bugs)": {
+      "sample_count": 101,
+      "positive_count": 3,
+      "positive_prevalence": 0.0297,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "pr_auc": 0.7333,
+      "brier_score": 0.0318,
+      "status": "EVALUATED"
+    }
+  },
+  "candidates_comparison": {
+    "LogisticRegression": {
+      "threshold": 0.5,
+      "sample_count": 209,
+      "positive_cases": 22,
+      "negative_cases": 187,
+      "positive_prevalence": 0.1053,
+      "precision": 0.1857,
+      "recall": 0.5909,
+      "f1": 0.2826,
+      "accuracy": 0.6842,
+      "pr_auc": 0.2958,
+      "roc_auc": 0.6957,
+      "brier_score": 0.2226,
+      "expected_calibration_error": 0.3661,
+      "calibration": {
+        "expected_calibration_error": 0.3661,
+        "prob_true": [
+          0.0392,
+          0.1071,
+          0.2,
+          0.6667
+        ],
+        "prob_pred": [
+          0.3664,
+          0.4812,
+          0.6648,
+          0.829
+        ],
+        "binned_details": [
+          {
+            "bin_index": 1,
+            "bin_range": "0.2-0.4",
+            "sample_count": 51,
+            "observed_frequency": 0.0392,
+            "predicted_probability": 0.3664,
+            "calibration_gap": 0.3272
+          },
+          {
+            "bin_index": 2,
+            "bin_range": "0.4-0.6",
+            "sample_count": 140,
+            "observed_frequency": 0.1071,
+            "predicted_probability": 0.4812,
+            "calibration_gap": 0.374
+          },
+          {
+            "bin_index": 3,
+            "bin_range": "0.6-0.8",
+            "sample_count": 15,
+            "observed_frequency": 0.2,
+            "predicted_probability": 0.6648,
+            "calibration_gap": 0.4648
+          },
+          {
+            "bin_index": 4,
+            "bin_range": "0.8-1.0",
+            "sample_count": 3,
+            "observed_frequency": 0.6667,
+            "predicted_probability": 0.829,
+            "calibration_gap": 0.1623
+          }
+        ]
+      },
+      "confusion_matrix": {
+        "true_negatives": 130,
+        "false_positives": 57,
+        "false_negatives": 9,
+        "true_positives": 13
+      }
+    },
+    "RandomForestClassifier": {
+      "threshold": 0.5,
+      "sample_count": 209,
+      "positive_cases": 22,
+      "negative_cases": 187,
+      "positive_prevalence": 0.1053,
+      "precision": 0.0938,
+      "recall": 0.1364,
+      "f1": 0.1111,
+      "accuracy": 0.7703,
+      "pr_auc": 0.1332,
+      "roc_auc": 0.5438,
+      "brier_score": 0.1768,
+      "expected_calibration_error": 0.2676,
+      "calibration": {
+        "expected_calibration_error": 0.2676,
+        "prob_true": [
+          0.1333,
+          0.0926,
+          0.1125,
+          0.1667
+        ],
+        "prob_pred": [
+          0.1634,
+          0.3114,
+          0.4756,
+          0.634
+        ],
+        "binned_details": [
+          {
+            "bin_index": 0,
+            "bin_range": "0.0-0.2",
+            "sample_count": 15,
+            "observed_frequency": 0.1333,
+            "predicted_probability": 0.1634,
+            "calibration_gap": 0.0301
+          },
+          {
+            "bin_index": 1,
+            "bin_range": "0.2-0.4",
+            "sample_count": 108,
+            "observed_frequency": 0.0926,
+            "predicted_probability": 0.3114,
+            "calibration_gap": 0.2188
+          },
+          {
+            "bin_index": 2,
+            "bin_range": "0.4-0.6",
+            "sample_count": 80,
+            "observed_frequency": 0.1125,
+            "predicted_probability": 0.4756,
+            "calibration_gap": 0.3631
+          },
+          {
+            "bin_index": 3,
+            "bin_range": "0.6-0.8",
+            "sample_count": 6,
+            "observed_frequency": 0.1667,
+            "predicted_probability": 0.634,
+            "calibration_gap": 0.4674
+          }
+        ]
+      },
+      "confusion_matrix": {
+        "true_negatives": 158,
+        "false_positives": 29,
+        "false_negatives": 19,
+        "true_positives": 3
+      }
+    }
+  },
+  "applicable_scope": {
+    "language": "Python",
+    "supported_features": [
+      "files_changed",
+      "lines_added",
+      "lines_deleted",
+      "total_churn",
+      "cyclomatic_complexity",
+      "maintainability_index",
+      "loc",
+      "function_count",
+      "recent_commit_frequency",
+      "previous_defects_count",
+      "test_failure_ratio",
+      "days_since_last_release",
+      "is_main_branch"
+    ],
+    "max_reliable_loc": 250000,
+    "requires_valid_history": true
+  }
+}
